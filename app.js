@@ -2,6 +2,9 @@
 
 var houseData = [];
 
+var signInForm = document.getElementById('signIn');
+signInForm.addEventListener('submit', 'sign in function goes here');
+
 function Region(name, type, averageList, sq) {
   this.name = name;
   this.type = type;
