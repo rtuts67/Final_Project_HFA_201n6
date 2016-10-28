@@ -1,3 +1,7 @@
+body {
+  background-image: url('images/city1.jpg');
+}
+
 .drop {
   align-items: center;
   margin-top: 2px;
