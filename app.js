@@ -41,12 +41,3 @@ doRegionMath();
 document.getElementById('send').onclick = function() {
   window.location.href = 'guide.html';
 };
-document.getElementById('home').onclick = function() {
-  window.location.href = 'index.html';
-};
-document.getElementById('income').onclick = function() {
-  window.location.href = 'guide.html';
-};
-document.getElementById('region').onclick = function() {
-  window.location.href = 'index.html';//changeafter
-};
