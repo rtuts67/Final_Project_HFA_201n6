@@ -4,6 +4,9 @@ var houseData = [];
 
 var signInForm = document.getElementById('signIn');
 signInForm.addEventListener('submit', 'sign in function goes here');
+// TODO: The Eventlistener for the income click will go here.
+var incomeDrop = document.getElementById('dropDown');
+incomeDrop.addEventListener('click');
 
 function Region(name, type, averageList, sq) {
   this.name = name;
