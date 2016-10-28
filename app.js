@@ -15,8 +15,8 @@ function Region(name, type, averageList, sq) {
 }
 
 Region.prototype.createDP = function(averageList) {
-    this.dp = (this.averageList * 0.10);
-  };
+  this.dp = (this.averageList * 0.10);
+};
 
 Region.prototype.makeItHappen = function() {
   this.createDP();
@@ -34,3 +34,7 @@ function doRegionMath() {
 };
 
 doRegionMath();
+
+document.getElementById('send').onclick = function() {
+  window.location.href = 'guide.html';
+};
