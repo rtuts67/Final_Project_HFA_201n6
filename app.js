@@ -1,9 +1,10 @@
 'use strict';
+var tableHeader = ['Region','Type','Average List Price', 'Square Ft'];
 
 var houseData = [];
 
-var signInForm = document.getElementById('signIn');
-signInForm.addEventListener('submit', 'sign in function goes here');
+//var signInForm = document.getElementById('signIn');
+//signInForm.addEventListener('submit', 'sign in function goes here');
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -14,7 +15,7 @@ function Region(name, type, averageList, sq) {
   houseData.push(this);
 }
 
-Region.prototype.createDP = function(averageList) {
+Region.prototype.createDP = function() {
   this.dp = (this.averageList * 0.10);
 };
 
@@ -35,6 +36,25 @@ function doRegionMath() {
 
 doRegionMath();
 
-document.getElementById('send').onclick = function() {
-  window.location.href = 'guide.html';
+//document.getElementById('send').onclick = function() {
+  //window.location.href = 'guide.html';
+//};
+
+function makeFirstRow() {
+  var firstRow = document.getElementById('header-row');
+  for (var i = 0; i < tableHeader.length; i++) {
+    var headers = document.createElement ('th');
+    headers.textContent = tableHeader[i];
+    firstRow.appendChild(headers)
+  }
 };
+makeFirstRow();
+
+
+  //var makeRow = document.createElement('tr');
+  //makeRow.textContent = firstCell;
+
+  //var firstCell = document.createElement('td');
+  //firstCell.textContent = reg.name;
+//  makeRow.appendChild(firstCell)
+//}
