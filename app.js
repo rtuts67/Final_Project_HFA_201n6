@@ -60,8 +60,12 @@ function makeOtherRows() {
     var makeRows = document.createElement('tr');
 
     var firstCell = document.createElement('td');
-    firstCell.textContent = houseData[x].name;
-    firstCell.src = 'landing.html';
+    var a = document.createElement('a');
+    a.textContent = houseData[x].name;
+    a.href = 'landing.html';
+    firstCell.appendChild(a);
+    //firstCell.id = 'landing';
+    //firstCell.addEventListener('click', landingButton);
     makeRows.appendChild(firstCell);
     console.log(houseData[x].name);
 
