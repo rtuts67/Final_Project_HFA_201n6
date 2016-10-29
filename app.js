@@ -3,8 +3,8 @@ var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayme
 
 var houseData = [];
 
-var signInForm = document.getElementById('send');
-signInForm.addEventListener('click', sendButton);
+var signInForm = document.getElementById('signIn');
+signInForm.addEventListener('submit', sendButton);
 // TODO: The Eventlistener for the income click will go here.
 var incomeDrop = document.getElementById('dropDown');
 incomeDrop.addEventListener('click');
