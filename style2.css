@@ -5,6 +5,7 @@ body {
 .drop {
   align-items: center;
   margin-top: 2px;
+
 }
 
 h1 {
@@ -35,4 +36,9 @@ div{
 }
 a:hover {
   color: red;
+}
+
+table {
+  margin-top: .05em;
+  border: 3px solid black;
 }
