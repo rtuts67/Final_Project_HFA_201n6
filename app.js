@@ -6,8 +6,10 @@ var houseData = [];
 //var signInForm = document.getElementById('signIn');
 //signInForm.addEventListener('submit', sendButton);
 // TODO: The Eventlistener for the income click will go here.
-//var incomeDrop = document.getElementById('dropDown');
-//incomeDrop.addEventListener('click');
+var incomeDrop = document.getElementById('dropDown1');
+var incomeDrop = document.getElementById('dropDown2');
+var incomeDrop = document.getElementById('dropDown3');
+
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -39,6 +41,12 @@ function doRegionMath() {
 
 doRegionMath();
 
+function showTable() {
+  if incomeDrop {
+    return document.getElementById('dropDown1'); ||
+  }
+}
+
 //function sendButton() {
   //window.location.href = 'guide.html';
 //};
@@ -51,7 +59,6 @@ function makeFirstRow() {
     firstRow.appendChild(headers);
   }
 };
-makeFirstRow();
 
 function makeOtherRows() {
   for (var x = 0; x < houseData.length; x++) {
@@ -88,4 +95,6 @@ function makeOtherRows() {
     tableRows.appendChild(makeRows);
   }
 };
-makeOtherRows();
+
+incomeDrop.addEventListener('click', makeFirstRow());
+incomeDrop.addEventListener('click', makeOtherRows());
