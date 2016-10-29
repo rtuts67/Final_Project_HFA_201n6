@@ -1,9 +1,13 @@
 'use strict';
+var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
 
 var houseData = [];
 
 var signInForm = document.getElementById('signIn');
 signInForm.addEventListener('submit', 'sign in function goes here');
+// TODO: The Eventlistener for the income click will go here.
+var incomeDrop = document.getElementById('dropDown');
+incomeDrop.addEventListener('click');
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -14,7 +18,7 @@ function Region(name, type, averageList, sq) {
   houseData.push(this);
 }
 
-Region.prototype.createDP = function(averageList) {
+Region.prototype.createDP = function() {
   this.dp = (this.averageList * 0.10);
 };
 
@@ -35,75 +39,45 @@ function doRegionMath() {
 
 doRegionMath();
 
-document.getElementById('send').onclick = function() {
-  window.location.href = 'guide.html';
+
+function makeFirstRow() {
+  var firstRow = document.getElementById('header-row');
+  for (var i = 0; i < tableHeader.length; i++) {
+    var headers = document.createElement ('th');
+    headers.textContent = tableHeader[i];
+    firstRow.appendChild(headers);
+  }
 };
+makeFirstRow();
 
+function makeOtherRows() {
+  for (var x = 0; x < houseData.length; x++) {
+    var tableRows = document.getElementById('table');
 
+    var makeRows = document.createElement('tr');
 
+    var firstCell = document.createElement('td');
+    firstCell.textContent = houseData[x].name;
+    makeRows.appendChild(firstCell);
+    console.log(houseData[x].name);
 
+    var secondCell = document.createElement('td');
+    secondCell.textContent = houseData[x].type;
+    makeRows.appendChild(secondCell);
 
+    var thirdCell = document.createElement('td');
+    thirdCell.textContent = houseData[x].averageList;
+    makeRows.appendChild(thirdCell);
 
+    var fourthCell = document.createElement('td');
+    fourthCell.textContent = houseData[x].sq;
+    makeRows.appendChild(fourthCell);
 
+    var fifthCell = document.createElement('td');
+    fifthCell.textContent = houseData[x].dp;
+    makeRows.appendChild(fifthCell);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.getElementById('home').onclick = function() {
-  window.location.href = 'index.html';
+    tableRows.appendChild(makeRows);
+  }
 };
-document.getElementById('income').onclick = function() {
-  window.location.href = 'guide.html';
-};
-document.getElementById('region').onclick = function() {
-  window.location.href = '';
-};
+makeOtherRows();
