@@ -1,13 +1,13 @@
 'use strict';
-var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
+var tableHeader = ['Region','Type','List Price', 'Square Ft', 'Downpayment'];
 
 var houseData = [];
 
-var signInForm = document.getElementById('signIn');
-signInForm.addEventListener('submit', sendButton);
+//var signInForm = document.getElementById('signIn');
+//signInForm.addEventListener('submit', sendButton);
 // TODO: The Eventlistener for the income click will go here.
-var incomeDrop = document.getElementById('dropDown');
-incomeDrop.addEventListener('click');
+//var incomeDrop = document.getElementById('dropDown');
+//incomeDrop.addEventListener('click');
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -39,9 +39,9 @@ function doRegionMath() {
 
 doRegionMath();
 
-function sendButton() {
-  window.location.href = 'guide.html';
-};
+//function sendButton() {
+  //window.location.href = 'guide.html';
+//};
 
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
@@ -61,6 +61,7 @@ function makeOtherRows() {
 
     var firstCell = document.createElement('td');
     firstCell.textContent = houseData[x].name;
+    firstCell.src = 'landing.html';
     makeRows.appendChild(firstCell);
     console.log(houseData[x].name);
 
