@@ -1,13 +1,11 @@
 'use strict';
+
 var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
 
 var houseData = [];
 
 var signInForm = document.getElementById('signIn');
 signInForm.addEventListener('submit', sendButton);
-// TODO: The Eventlistener for the income click will go here.
-var incomeDrop = document.getElementById('dropDown');
-incomeDrop.addEventListener('click');
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -83,4 +81,5 @@ function makeOtherRows() {
     tableRows.appendChild(makeRows);
   }
 };
+
 makeOtherRows();

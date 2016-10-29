@@ -1,6 +1,7 @@
 body {
-  background-image: url('images/city1.jpg');
+  background-image: url('images/wood.jpg');
   background-size: cover;
+  /*opacity: 0.5;*/
 }
 
 .form {
