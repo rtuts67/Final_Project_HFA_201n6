@@ -2,8 +2,8 @@
 
 var houseData = [];
 
-var signInForm = document.getElementById('signIn');
-signInForm.addEventListener('submit', 'sign in function goes here');
+var signInForm = document.getElementById('send');
+signInForm.addEventListener('click', sendButton);
 // TODO: The Eventlistener for the income click will go here.
 var incomeDrop = document.getElementById('dropDown');
 incomeDrop.addEventListener('click');
@@ -34,10 +34,10 @@ function doRegionMath() {
   for (var i = 0; i < houseData.length; i++) {
     houseData[i].makeItHappen();
   }
-};
 
 doRegionMath();
+};
 
-document.getElementById('send').onclick = function() {
+function sendButton() {
   window.location.href = 'guide.html';
 };
