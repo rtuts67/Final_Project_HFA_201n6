@@ -1,7 +1,6 @@
 body {
-  /*background-image: url('images/city1.jpg');*/
-  /*background-image: url('images/maxresdefault.jpg');*/
-  background-image: url('images/city2.jpeg');
+  background-image: url('images/city1.jpg');
+  background-size: cover;
 }
 
 .form {
@@ -78,7 +77,7 @@ fieldset {
 }
 .drawer-elem
 {
-   display: none;
+  display: none;
 }
 
 
