@@ -102,5 +102,14 @@ a:hover {
 }
 
 .img-circle {
+  float:right;
   border-radius: 55%;
+}
+
+#words{
+  background: #FFF;
+  font-size: 12px;
+  color: #888;
+  border: 1px solid #CCC;
+  padding: 10px 20px 10px 20px;
 }
