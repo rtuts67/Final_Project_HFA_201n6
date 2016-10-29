@@ -1,5 +1,6 @@
 body {
   background-image: url('images/city1.jpg');
+  background-size: cover;
 }
 
 .drop {
@@ -39,6 +40,12 @@ a:hover {
 }
 
 table {
+  margin: auto;
   margin-top: .05em;
   border: 3px solid black;
+  table-layout: fixed;
+}
+
+td {
+    word-wrap:break-word;
 }
