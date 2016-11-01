@@ -1,7 +1,11 @@
 'use strict';
-var tableHeader = ['Region','Type','List Price', 'Square Ft', 'Downpayment'];
+
+var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
 
 var houseData = [];
+
+var signInForm = document.getElementById('signIn');
+signInForm.addEventListener('submit', sendButton);
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -33,6 +37,10 @@ function doRegionMath() {
 
 doRegionMath();
 
+function sendButton() {
+  window.location.href = 'guide.html';
+};
+
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
   for (var i = 0; i < tableHeader.length; i++) {
@@ -50,6 +58,8 @@ function makeOtherRows() {
     var makeRows = document.createElement('tr');
 
     var firstCell = document.createElement('td');
+    firstCell.textContent = houseData[x].name;
+
     var a = document.createElement('a');
     a.textContent = houseData[x].name;
     a.href = 'landing.html';
@@ -76,6 +86,7 @@ function makeOtherRows() {
     tableRows.appendChild(makeRows);
   }
 };
+
 makeOtherRows();
 
 
