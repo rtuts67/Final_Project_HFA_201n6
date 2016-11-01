@@ -10,7 +10,8 @@ body {
   max-width: 500px;
   background: #F7F7F7;
   padding: 25px 15px 25px 10px;
-  font-family: 12px 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
+  font-size: 12px;
   color: #888;
   text-shadow: 1px 1px 1px #FFF;
   border:1px solid #E4E4E4;
@@ -53,21 +54,19 @@ body {
 }
 
 h1 {
-  font-family:35px 'Cabin', sans-serif;
+  font-family:'Cabin', sans-serif;
+  font-size: 50px;
+  margin-top: 60px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 p {
-  font-family:12px 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
   text-align: center;
   font-size: 20px;
   margin-left: 250px;
   margin-right: 250px;
-}
-
-h1 {
-  font-family: 35px 'Cabin', sans-serif;
-  text-align: center;
 }
 
 fieldset {
@@ -75,17 +74,20 @@ fieldset {
   padding: 10px;
   margin-left: 460px;
 }
+
 .drawer-elem
 {
   display: none;
 }
 
 
-div{
+div {
   margin-top: 100px;
-  font-family: 14px 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
   text-align: center;
 }
+
 .footButton {
   width: 100px;
   padding: 30px;
@@ -96,61 +98,66 @@ div{
   border: 1px solid #CCC;
   padding: 10px 60px 10px 60px;
 }
+
 a:hover {
   color: red;
 }
 
 .img-circle {
+  position: relative;
+  z-index: 1;
   float:right;
   border-radius: 55%;
 }
 
-#words{
+#words {
+  opacity: .7;
   background: #FFF;
   font-size: 12px;
-  color: #888;
+  color: black;
   border: 1px solid #CCC;
   padding: 10px 20px 10px 20px;
+  margin-top: 35px;
 }
 /* Dropdown Button */
 .dropbtn {
-    background-color: #F7F7F7;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    float: right;
+  background-color: #F7F7F7;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  float: right;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: absolute;;
-    display: inline;
+  position: absolute;;
+  display: inline;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
-    position: inherit;
-    background-color: #F7F7F7;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  position: inherit;
+  background-color: #F7F7F7;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    text-decoration-color: black;
-    display: block;
-    position: relative;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-decoration-color: black;
+  display: block;
+  position: relative;
 }
 
 /* Change color of dropdown links on hover */
