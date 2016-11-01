@@ -4,8 +4,7 @@ var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayme
 
 var houseData = [];
 
-var signInForm = document.getElementById('signIn');
-signInForm.addEventListener('submit', sendButton);
+var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html'];
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -58,14 +57,12 @@ function makeOtherRows() {
     var makeRows = document.createElement('tr');
 
     var firstCell = document.createElement('td');
-    firstCell.textContent = houseData[x].name;
 
     var a = document.createElement('a');
     a.textContent = houseData[x].name;
-    a.href = 'landing.html';
+    a.href = landing[x];
     firstCell.appendChild(a);
     makeRows.appendChild(firstCell);
-    console.log(houseData[x].name);
 
     var secondCell = document.createElement('td');
     secondCell.textContent = houseData[x].type;
