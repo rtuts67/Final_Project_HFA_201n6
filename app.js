@@ -59,6 +59,13 @@ function makeOtherRows() {
 
     var firstCell = document.createElement('td');
     firstCell.textContent = houseData[x].name;
+
+    var a = document.createElement('a');
+    a.textContent = houseData[x].name;
+    a.href = 'landing.html';
+    firstCell.appendChild(a);
+    //firstCell.id = 'landing';
+    //firstCell.addEventListener('click', landingButton);
     makeRows.appendChild(firstCell);
     console.log(houseData[x].name);
 
@@ -83,3 +90,65 @@ function makeOtherRows() {
 };
 
 makeOtherRows();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
