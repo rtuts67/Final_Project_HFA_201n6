@@ -64,8 +64,6 @@ function makeOtherRows() {
     a.textContent = houseData[x].name;
     a.href = 'landing.html';
     firstCell.appendChild(a);
-    //firstCell.id = 'landing';
-    //firstCell.addEventListener('click', landingButton);
     makeRows.appendChild(firstCell);
     console.log(houseData[x].name);
 
