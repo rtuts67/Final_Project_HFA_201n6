@@ -3,12 +3,6 @@ var tableHeader = ['Region','Type','List Price', 'Square Ft', 'Downpayment'];
 
 var houseData = [];
 
-//var signInForm = document.getElementById('signIn');
-//signInForm.addEventListener('submit', sendButton);
-// TODO: The Eventlistener for the income click will go here.
-//var incomeDrop = document.getElementById('dropDown');
-//incomeDrop.addEventListener('click');
-
 function Region(name, type, averageList, sq) {
   this.name = name;
   this.type = type;
@@ -39,10 +33,6 @@ function doRegionMath() {
 
 doRegionMath();
 
-//function sendButton() {
-  //window.location.href = 'guide.html';
-//};
-
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
   for (var i = 0; i < tableHeader.length; i++) {
@@ -64,8 +54,6 @@ function makeOtherRows() {
     a.textContent = houseData[x].name;
     a.href = 'landing.html';
     firstCell.appendChild(a);
-    //firstCell.id = 'landing';
-    //firstCell.addEventListener('click', landingButton);
     makeRows.appendChild(firstCell);
     console.log(houseData[x].name);
 
