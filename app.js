@@ -1,6 +1,8 @@
 'use strict';
 var tableHeader = ['Region','Type','List Price', 'Square Ft', 'Downpayment'];
 
+var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html'];
+
 var houseData = [];
 
 function Region(name, type, averageList, sq) {
@@ -52,7 +54,7 @@ function makeOtherRows() {
     var firstCell = document.createElement('td');
     var a = document.createElement('a');
     a.textContent = houseData[x].name;
-    a.href = 'landing.html';
+    a.href = landing[x];
     firstCell.appendChild(a);
     makeRows.appendChild(firstCell);
     console.log(houseData[x].name);
