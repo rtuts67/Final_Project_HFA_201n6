@@ -1,9 +1,18 @@
 'use strict';
 var signInForm = document.getElementById('send');
+
+var el = document.querySelector('form');
+var matches = el.querySelectorAll('userName');
+var data = {};
+for (var i = 0; i < matches.length; i++) {
+  data[matches[i].name] = matches[i].value;
+}
+
 function sendButton(event) {
   if (event.target.id === 'send') {
     window.location.href = 'guide.html';
   } else {};
+  localStorage.setItem('name', JSON.stringify(data));
 };
 signInForm.addEventListener('click', sendButton);
 
