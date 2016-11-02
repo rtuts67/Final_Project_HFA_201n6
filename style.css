@@ -63,8 +63,8 @@ h1 {
 }
 
 p {
-  font-family: 'Cabin', sans-serif;
-  text-align: center;
+  font-family:12px 'Cabin', sans-serif;
+  text-align: left;
   font-size: 20px;
   margin-left: 250px;
   margin-right: 250px;
