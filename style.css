@@ -105,16 +105,18 @@ a:hover {
 }
 
 .img-circle {
+  float:right;
   position: relative;
   z-index: 1;
-  float:right;
   border-radius: 55%;
+  margin-left: auto;
 }
 
 #words {
   opacity: .7;
   background: #FFF;
-  font-size: 12px;
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
   color: black;
   border: 1px solid #CCC;
   padding: 10px 20px 10px 20px;
@@ -175,6 +177,7 @@ a:hover {
 #menu {
   float: right;
   position: relative;
+  z-index: 1;
   color: #999;
   width: 200px;
   padding: 10px;
