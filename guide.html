@@ -6,6 +6,19 @@
   <meta charset="utf-8">
   <title>Home Field Advantage</title>
 </head>
+<a href="#menu" id="toggle"><span></span></a>
+
+<div id="menu">
+  <ul>
+    <li><a href="index.html">HFA Home</a></li>
+    <li><a href="#">Income Selector</a></li>
+    <li class="dir"><a href="landing.html">North</a></li>
+    <li class="dir"><a href="Slanding">South</a>
+      <li class="dir"><a href="landingEast.html">East</a></li>
+      <li class="dir"><a href="west.html">West</a></li>
+    </ul>
+  </div>
+</div>
 <body>
   <h1>Income Selector</h1>
   <p>
@@ -16,15 +29,13 @@
       Please select your income range:
     </p>
     <select id="dropDown" class="drop" name="option1">
-      <option value="option">Select Income</option>
-      <option value="option">$65,000-$150,000</option>
-      <option value="option">$150,001-$250,000</option>
-      <option value="option">$250,001-$400,000</option>
+      <option id="" value="null">Select Income</option>
+      <option id="" value="low">$65,000 - $150,000</option>
+      <option id="" value="mid">$150,001 - $250,000</option>
+      <option id="" value="high">$250,001 - $400,000</option>
     </select>
-  </div><br />
-<br>
-<br>
-<br>
+  </div>
+  <br></br>
 <table id="table">
   <thead>
     <tr id="header-row">
@@ -36,8 +47,6 @@
   <footer>
     <a href="index.html" id="home" class="footButton">HFA Home</a>
     <a href="#" id="income" class="footButton">Income Selector</a>
-    <a href="landing.html" id="region" class="footButton">North Region</a>
-    <a href="SLanding.html" id="region" class="footButton">South Region</a>
   </footer>
 </div>
 <script type="text/javascript" src="app.js"></script>
