@@ -36,6 +36,19 @@ function doRegionMath() {
 
 doRegionMath();
 
+function sendButton() {
+  window.location.href = 'guide.html';
+};
+
+function displayLocalStorage() {
+  if (localStorage.name) {
+    var name = JSON.parse(localStorage.getItem('name'));
+    var id = document.getElementById('localS');
+    id.textContent = 'Welcome, ' + name + '!' + ' This is as simple as it gets. Select your income level and let us suggest which neighborhoods fit your needs.';
+  }
+}
+displayLocalStorage();
+
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
   for (var i = 0; i < tableHeader.length; i++) {
@@ -127,51 +140,73 @@ dropDown.addEventListener('change', showTable);
 
 
 
-
-
-
-
-
-
-
-
-
 var theToggle = document.getElementById('toggle');
 
-// hasClass
 function hasClass(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+
+  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+
 }
-// addClass
 function addClass(elem, className) {
-   if (!hasClass(elem, className)) {
-       elem.className += ' ' + className;
-   }
+
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+
+  if (!hasClass(elem, className)) {
+    elem.className += ' ' + className;
+  }
 }
-// removeClass
 function removeClass(elem, className) {
-    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-    if (hasClass(elem, className)) {
-       while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-           newClass = newClass.replace(' ' + className + ' ', ' ');
-       }
-       elem.className = newClass.replace(/^\s+|\s+$/g, '');
-   }
+
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+
+  var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+      newClass = newClass.replace(' ' + className + ' ', ' ');
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  }
+
 }
-// toggleClass
 function toggleClass(elem, className) {
-    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-   if (hasClass(elem, className)) {
-       while (newClass.indexOf(" " + className + " ") >= 0 ) {
-           newClass = newClass.replace( " " + className + " " , " " );
-       }
-       elem.className = newClass.replace(/^\s+|\s+$/g, '');
-   } else {
-       elem.className += ' ' + className;
-   }
+
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+
+  var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(" " + className + " ") >= 0 ) {
+      newClass = newClass.replace( " " + className + " " , " " );
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  } else {
+    elem.className += ' ' + className;
+  }
 }
 
 theToggle.onclick = function() {
   toggleClass(this, 'on');
   return false;
-};
+}
