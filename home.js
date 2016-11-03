@@ -1,11 +1,15 @@
 'use strict';
 var signInForm = document.getElementById('send');
+
 function sendButton(event) {
   if (event.target.id === 'send') {
     window.location.href = 'guide.html';
+    var data = document.getElementById('userName').value;
+    localStorage.setItem('name', JSON.stringify(data));
   } else {};
 };
 signInForm.addEventListener('click', sendButton);
+
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */

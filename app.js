@@ -5,11 +5,9 @@ var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html']
 
 var houseData = [];
 
-var dropDown1 = document.getElementById('dropdown1');
 
-var dropDown2 = document.getElementById('dropdown2');
 
-var dropDown3 = document.getElementById('dropdown3');
+
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -38,6 +36,8 @@ function doRegionMath() {
     houseData[i].makeItHappen();
   }
 };
+
+doRegionMath();
 
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
@@ -82,17 +82,101 @@ function makeOtherRows() {
   }
 };
 
-function handleClick(event) {
-  if (event.target.id === 'dropdown1') {
-    doRegionMath();
+function showTable(event) {
+  if (event.target.id === 'dropDown') {
+    table.style.visibility = 'visible';
     makeFirstRow();
     makeOtherRows();
-  } else {}
+  }
+    else {
+      document.getElementById('dropDown0');
+      table.style.visibility = 'hidden';
+    }
 };
+dropDown.addEventListener('change', showTable);
 
 
-dropDown1.addEventListener('click', handleClick);
 
-dropDown2.addEventListener('click', handleClick);
 
-dropDown3.addEventListener('click', handleClick);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var theToggle = document.getElementById('toggle');
+
+// hasClass
+function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+   if (!hasClass(elem, className)) {
+       elem.className += ' ' + className;
+   }
+}
+// removeClass
+function removeClass(elem, className) {
+    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+    if (hasClass(elem, className)) {
+       while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+           newClass = newClass.replace(' ' + className + ' ', ' ');
+       }
+       elem.className = newClass.replace(/^\s+|\s+$/g, '');
+   }
+}
+// toggleClass
+function toggleClass(elem, className) {
+    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+   if (hasClass(elem, className)) {
+       while (newClass.indexOf(" " + className + " ") >= 0 ) {
+           newClass = newClass.replace( " " + className + " " , " " );
+       }
+       elem.className = newClass.replace(/^\s+|\s+$/g, '');
+   } else {
+       elem.className += ' ' + className;
+   }
+}
+
+theToggle.onclick = function() {
+  toggleClass(this, 'on');
+  return false;
+};
