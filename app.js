@@ -2,9 +2,9 @@
 
 var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
 
-var houseData = [];
-
 var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html'];
+
+var houseData = [];
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -57,7 +57,6 @@ function makeFirstRow() {
     firstRow.appendChild(headers);
   }
 };
-makeFirstRow();
 
 function makeOtherRows() {
   for (var x = 0; x < houseData.length; x++) {
@@ -66,7 +65,6 @@ function makeOtherRows() {
     var makeRows = document.createElement('tr');
 
     var firstCell = document.createElement('td');
-
     var a = document.createElement('a');
     a.textContent = houseData[x].name;
     a.href = landing[x];
@@ -93,16 +91,18 @@ function makeOtherRows() {
   }
 };
 
-makeOtherRows();
-
-
-
-
-
-
-
-
-
+function showTable(event) {
+  if (event.target.id === 'dropDown') {
+    table.style.visibility = 'visible';
+    makeFirstRow();
+    makeOtherRows();
+  }
+    else {
+      document.getElementById('dropDown0');
+      table.style.visibility = 'hidden';
+    }
+};
+dropDown.addEventListener('change', showTable);
 
 
 
