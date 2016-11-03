@@ -40,6 +40,15 @@ function sendButton() {
   window.location.href = 'guide.html';
 };
 
+function displayLocalStorage() {
+  if (localStorage.name) {
+    var name = JSON.parse(localStorage.getItem('name'));
+    var id = document.getElementById('localS');
+    id.textContent = 'Welcome, ' + name + '!' + ' This is as simple as it gets. Select your income level and let us suggest which neighborhoods fit your needs.';
+  }
+}
+displayLocalStorage();
+
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
   for (var i = 0; i < tableHeader.length; i++) {
@@ -134,14 +143,33 @@ makeOtherRows();
 var theToggle = document.getElementById('toggle');
 
 function hasClass(elem, className) {
+<<<<<<< HEAD
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+=======
   return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+>>>>>>> a9d09e6c3f9f98f9b57020e38e5c6fd2d0492bd2
 }
 function addClass(elem, className) {
+<<<<<<< HEAD
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+=======
   if (!hasClass(elem, className)) {
     elem.className += ' ' + className;
   }
+>>>>>>> a9d09e6c3f9f98f9b57020e38e5c6fd2d0492bd2
 }
 function removeClass(elem, className) {
+<<<<<<< HEAD
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+=======
   var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
   if (hasClass(elem, className)) {
     while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
@@ -149,8 +177,25 @@ function removeClass(elem, className) {
     }
     elem.className = newClass.replace(/^\s+|\s+$/g, '');
   }
+>>>>>>> a9d09e6c3f9f98f9b57020e38e5c6fd2d0492bd2
 }
 function toggleClass(elem, className) {
+<<<<<<< HEAD
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+=======
   var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
   if (hasClass(elem, className)) {
     while (newClass.indexOf(" " + className + " ") >= 0 ) {
@@ -165,4 +210,5 @@ function toggleClass(elem, className) {
 theToggle.onclick = function() {
   toggleClass(this, 'on');
   return false;
+>>>>>>> a9d09e6c3f9f98f9b57020e38e5c6fd2d0492bd2
 }
