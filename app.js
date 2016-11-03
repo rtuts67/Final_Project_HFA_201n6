@@ -5,10 +5,6 @@ var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html']
 
 var houseData = [];
 
-
-
-
-
 function Region(name, type, averageList, sq) {
   this.name = name;
   this.type = type;
@@ -26,18 +22,32 @@ Region.prototype.makeItHappen = function() {
   this.createDP();
 };
 
-new Region('North', 'House', 480000, 1200);
-new Region('East', 'Condo', 439500, 1175);
-new Region('West', 'Condo', 438000, 1171);
-new Region('South', 'House', 699000, 1765);
+function lowValue() {
+  new Region('North', 'Condo', 354000, 1200);
+  new Region('East', 'Condo', 439500, 1175);
+  new Region('West', 'Condo', 438000, 1171);
+  new Region('South', 'House', 440000, 1765);
+};
+
+function midValue() {
+  new Region('North', 'House', 480000, 1200);
+  new Region('East', 'Condo', 439500, 1175);
+  new Region('West', 'Condo', 438000, 1171);
+  new Region('South', 'House', 699000, 1765);
+};
+
+function highValue() {
+  new Region('North', 'House', 480000, 2200);
+  new Region('East', 'House', 584000, 2000);
+  new Region('West', 'House', 557000, 2100);
+  new Region('South', 'House', 699000, 2200);
+};
 
 function doRegionMath() {
   for (var i = 0; i < houseData.length; i++) {
     houseData[i].makeItHappen();
   }
 };
-
-doRegionMath();
 
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
@@ -60,7 +70,6 @@ function makeOtherRows() {
     a.href = landing[x];
     firstCell.appendChild(a);
     makeRows.appendChild(firstCell);
-    console.log(houseData[x].name);
 
     var secondCell = document.createElement('td');
     secondCell.textContent = houseData[x].type;
@@ -82,101 +91,63 @@ function makeOtherRows() {
   }
 };
 
-function showTable(event) {
-  if (event.target.id === 'dropDown') {
-    table.style.visibility = 'visible';
-    makeFirstRow();
-    makeOtherRows();
-  }
-    else {
-      document.getElementById('dropDown0');
-      table.style.visibility = 'hidden';
-    }
+function showTable (event) {
+  table.style.visibility = 'visible';
+  if (event.target.value === 'low') {
+    lowValue();
+  } else if (event.target.value === 'mid') {
+    midValue();
+  } else if (event.target.value === 'high') {
+    highValue();
+  } else {
+    document.getElementById('dropDown0');
+    table.style.visibility = 'hidden';
+  };
+  doRegionMath();
+  makeFirstRow();
+  makeOtherRows();
+  dropDown.removeEventListener('change', showTable);
 };
+
 dropDown.addEventListener('change', showTable);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var theToggle = document.getElementById('toggle');
 
 // hasClass
 function hasClass(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
 // addClass
 function addClass(elem, className) {
-   if (!hasClass(elem, className)) {
-       elem.className += ' ' + className;
-   }
+  if (!hasClass(elem, className)) {
+    elem.className += ' ' + className;
+  }
 }
 // removeClass
 function removeClass(elem, className) {
-    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-    if (hasClass(elem, className)) {
-       while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-           newClass = newClass.replace(' ' + className + ' ', ' ');
-       }
-       elem.className = newClass.replace(/^\s+|\s+$/g, '');
-   }
+  var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+      newClass = newClass.replace(' ' + className + ' ', ' ');
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  }
 }
 // toggleClass
 function toggleClass(elem, className) {
-    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-   if (hasClass(elem, className)) {
-       while (newClass.indexOf(" " + className + " ") >= 0 ) {
-           newClass = newClass.replace( " " + className + " " , " " );
-       }
-       elem.className = newClass.replace(/^\s+|\s+$/g, '');
-   } else {
-       elem.className += ' ' + className;
-   }
+  var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(" " + className + " ") >= 0 ) {
+      newClass = newClass.replace( " " + className + " " , " " );
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  } else {
+    elem.className += ' ' + className;
+  }
 }
 
 theToggle.onclick = function() {
 
   toggleClass(this, 'on');
   return false;
+};
