@@ -53,6 +53,7 @@ table {
   margin-top: .05em;
   border: 3px solid black;
   table-layout: fixed;
+  visibility: hidden;
 }
 
 td {

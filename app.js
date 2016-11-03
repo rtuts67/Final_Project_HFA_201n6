@@ -6,7 +6,8 @@ var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html']
 
 var houseData = [];
 
-var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html'];
+//var signInForm = document.getElementById('signIn');
+//signInForm.addEventListener('submit', sendButton);
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -38,10 +39,6 @@ function doRegionMath() {
 
 doRegionMath();
 
-function sendButton() {
-  window.location.href = 'guide.html';
-};
-
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
   for (var i = 0; i < tableHeader.length; i++) {
@@ -50,7 +47,6 @@ function makeFirstRow() {
     firstRow.appendChild(headers);
   }
 };
-makeFirstRow();
 
 function makeOtherRows() {
   for (var x = 0; x < houseData.length; x++) {
@@ -86,7 +82,19 @@ function makeOtherRows() {
   }
 };
 
-makeOtherRows();
+function showTable(event) {
+  if (event.target.id === 'dropDown') {
+    table.style.visibility = 'visible';
+    makeFirstRow();
+    makeOtherRows();
+  }
+    else {
+      document.getElementById('dropDown0');
+      table.style.visibility = 'hidden';
+    }
+};
+dropDown.addEventListener('change', showTable);
+
 
 
 
