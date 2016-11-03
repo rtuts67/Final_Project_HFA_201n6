@@ -1,16 +1,13 @@
 'use strict';
-var tableHeader = ['Region','Type','List Price', 'Square Ft', 'Downpayment'];
+
+var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
+
+var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html'];
 
 var houseData = [];
 
 //var signInForm = document.getElementById('signIn');
 //signInForm.addEventListener('submit', sendButton);
-// TODO: The Eventlistener for the income click will go here.
-var incomeDrop1 = document.getElementById('dropDown0');
-var incomeDrop1 = document.getElementById('dropDown1');
-var incomeDrop2 = document.getElementById('dropDown2');
-var incomeDrop3 = document.getElementById('dropDown3');
-
 
 function Region(name, type, averageList, sq) {
   this.name = name;
@@ -42,11 +39,6 @@ function doRegionMath() {
 
 doRegionMath();
 
-
-//function sendButton() {
-  //window.location.href = 'guide.html';
-//};
-
 function makeFirstRow() {
   var firstRow = document.getElementById('header-row');
   for (var i = 0; i < tableHeader.length; i++) {
@@ -63,14 +55,12 @@ function makeOtherRows() {
     var makeRows = document.createElement('tr');
 
     var firstCell = document.createElement('td');
+
     var a = document.createElement('a');
     a.textContent = houseData[x].name;
-    a.href = 'landing.html';
+    a.href = landing[x];
     firstCell.appendChild(a);
-    //firstCell.id = 'landing';
-    //firstCell.addEventListener('click', landingButton);
     makeRows.appendChild(firstCell);
-    console.log(houseData[x].name);
 
     var secondCell = document.createElement('td');
     secondCell.textContent = houseData[x].type;
@@ -104,3 +94,89 @@ function showTable(event) {
     }
 };
 dropDown.addEventListener('change', showTable);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var theToggle = document.getElementById('toggle');
+
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
