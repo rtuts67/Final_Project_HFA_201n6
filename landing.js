@@ -18,6 +18,7 @@ function removeClass(elem, className) {
     }
     elem.className = newClass.replace(/^\s+|\s+$/g, '');
   }
+}
 
   function toggleClass(elem, className) {
     var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
