@@ -6,6 +6,8 @@ var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html']
 
 var houseData = [];
 
+var clicksTotal = 0;
+
 function Region(name, type, averageList, sq) {
   this.name = name;
   this.type = type;
@@ -70,7 +72,7 @@ function makeFirstRow() {
 
 function makeOtherRows() {
   for (var x = 0; x < houseData.length; x++) {
-    var tableRows = document.getElementById('table');
+    var tableRows = document.getElementById('tbody');
 
     var makeRows = document.createElement('tr');
 
@@ -103,6 +105,16 @@ function makeOtherRows() {
 
 function showTable (event) {
   table.style.visibility = 'visible';
+  clicksTotal += 1;
+  if (clicksTotal > 1) {
+    houseData = [];
+    var elmHead = document.getElementById('header-row');
+    elmHead.innerHTML = '';
+    console.log(elmHead);
+    var elmTable = document.getElementById('tbody');
+    elmTable.innerHTML = '';
+    console.log(elmTable);
+  }
   if (event.target.value === 'low') {
     lowValue();
   } else if (event.target.value === 'mid') {
@@ -113,11 +125,12 @@ function showTable (event) {
     document.getElementById('dropDown0');
     table.style.visibility = 'hidden';
   };
-  doRegionMath();
-  makeFirstRow();
-  makeOtherRows();
-  dropDown.removeEventListener('change', showTable);
-};
+  // doRegionMath();
+  // makeOtherRows();
+    doRegionMath();
+    makeFirstRow();
+    makeOtherRows();
+}
 
 dropDown.addEventListener('change', showTable);
 
