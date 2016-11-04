@@ -110,6 +110,7 @@ a:hover {
   z-index: 1;
   border-radius: 55%;
   margin-left: auto;
+  margin-top: 1px;
 }
 
 #words {
