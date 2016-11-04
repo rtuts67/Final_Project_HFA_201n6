@@ -49,6 +49,8 @@ a:hover {
 }
 
 table {
+  opacity: .7;
+  background: #FFF;
   margin: auto;
   margin-top: .05em;
   border: 3px solid black;
