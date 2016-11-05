@@ -37,7 +37,7 @@ Index.html/ Login Page - Will contain a form/filed for user input to include Ema
 Index.html will contain some information about Seattle and a few pictures.
 Index.html will also contain a link to Guide.html
 
-Guide.html will have a form with a radio or dropdown button that will ask the user annual household income bracket
+Guide.html will have a form with a dropdown button that will ask the user annual household income bracket
 There will be 3 options: These are listed above
 Based on the input, a table will be rendered for the appropriate income brackets
 (see sketch) - data will come from redfin list price for condo and house, SF
