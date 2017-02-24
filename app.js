@@ -2,7 +2,7 @@
 
 var tableHeader = ['Region','Type','Average List Price', 'Square Ft', 'Downpayment'];
 
-var landing = ['landing.html', 'landingEast.html', 'west.html', 'slanding.html'];
+var landing = ['landing.html', 'landingEast.html', 'west.html', 'SLanding.html'];
 
 var houseData = [];
 
